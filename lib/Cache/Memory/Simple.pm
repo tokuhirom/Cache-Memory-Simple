@@ -79,7 +79,7 @@ Cache::Memory::Simple - Yet another on memory cache
     sub get_stuff {
         my ($class, $key) = @_;
 
-        state $cache = Cache::MemoryCache::Simple->new();
+        state $cache = Cache::Memory::Simple->new();
         $cache->get_or_set(
             $key, sub {
                 Storage->get($key) # slow operation
