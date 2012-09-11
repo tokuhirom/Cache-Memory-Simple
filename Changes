@@ -1,4 +1,8 @@
 Revision history for Perl extension Cache::Memory::Simple
 
+0.02
+
+    - doc fix
+
 0.01    Tue Sep 11 12:39:52 2012
     - original version
