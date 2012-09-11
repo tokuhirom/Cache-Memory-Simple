@@ -91,8 +91,6 @@ Cache::Memory::Simple - Yet another on memory cache
 
 Cache::Memory::Simple is yet another on memory cache implementation.
 
-This module have a following limitations. If you want to accept these, use other modules instead.
-
 =head1 METHODS
 
 =over 4
@@ -116,6 +114,8 @@ Delete key from cache.
 =item $obj->purge()
 
 Purge expired data.
+
+This module does not purge expired data automatically. You need to call this method if you need.
 
 =back
 
