@@ -1,5 +1,9 @@
 Revision history for Perl extension Cache::Memory::Simple
 
+0.05
+
+    - added #delete_all method.
+
 0.04
 
     - use Time::HiRes for better resolution
