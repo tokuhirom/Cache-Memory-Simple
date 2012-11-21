@@ -51,6 +51,12 @@ sub delete :method {
     delete $self->{$key};
 }
 
+sub delete_all {
+    my $self = shift;
+    delete $self->{$_} for keys %$self;
+    return;
+}
+
 sub purge {
     my $self = shift;
     for my $key (keys %{$self}) {
@@ -120,6 +126,10 @@ Delete key from cache.
 Purge expired data.
 
 This module does not purge expired data automatically. You need to call this method if you need.
+
+=item $obj->delete_all()
+
+Remove all data from cache.
 
 =back
 

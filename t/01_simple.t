@@ -55,5 +55,14 @@ subtest 'purge expired data' => sub {
     is($cache->get('never'), 'ending story');
 };
 
+subtest 'delete_all' => sub {
+    my $cache = Cache::Memory::Simple->new();
+    $cache->set('x' => 'y');
+    $cache->set('m' => 'o');
+    $cache->delete_all();
+    is($cache->get('x'), undef);
+    is($cache->get('m'), undef);
+};
+
 done_testing;
 
