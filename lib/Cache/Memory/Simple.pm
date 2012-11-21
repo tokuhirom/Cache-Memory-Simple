@@ -2,8 +2,8 @@ package Cache::Memory::Simple;
 use strict;
 use warnings;
 use Time::HiRes;
-use 5.008008;
-our $VERSION = '0.02';
+use 5.008001;
+our $VERSION = '0.04';
 
 sub new {
     my ($class) = @_;
