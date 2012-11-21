@@ -4,6 +4,13 @@ use utf8;
 use Test::More;
 use Test::Time time => 1;
 use Cache::Memory::Simple;
+use Time::HiRes qw//;
+
+{
+    # CORE::GLOBAL::time() is overrided by Test::Time and use it
+    no warnings;
+    *Time::HiRes::time = sub { time() };
+}
 
 subtest 'get/set' => sub {
     my $cache = Cache::Memory::Simple->new();

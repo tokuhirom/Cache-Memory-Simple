@@ -1,6 +1,7 @@
 package Cache::Memory::Simple;
 use strict;
 use warnings;
+use Time::HiRes;
 use 5.008008;
 our $VERSION = '0.02';
 
@@ -13,7 +14,7 @@ sub get {
     my ($self, $key) = @_;
     my $val = $self->{$key};
     if (defined $val->[0]) {
-        if ($val->[0] > time()) {
+        if ($val->[0] > Time::HiRes::time() ) {
             return $val->[1];
         } else {
             delete $self->{$key}; # remove expired data
@@ -38,7 +39,10 @@ sub get_or_set {
 
 sub set {
     my ($self, $key, $val, $expiration) = @_;
-    $self->{$key} = [defined($expiration) ? $expiration + time() : undef, $val];
+    $self->{$key} = [defined($expiration) 
+                         ? $expiration + Time::HiRes::time()
+                         : undef,
+                     $val];
     return $val;
 }
 
@@ -51,7 +55,7 @@ sub purge {
     my $self = shift;
     for my $key (keys %{$self}) {
         my $entry = $self->{$key}->[0];
-        if (defined($entry) && $entry < time()) {
+        if (defined($entry) && $entry < Time::HiRes::time() ) {
             delete $self->{$key};
         }
     }
