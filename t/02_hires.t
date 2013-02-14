@@ -5,7 +5,7 @@ use Test::More;
 use Cache::Memory::Simple;
 use Time::HiRes qw//;
 
-subtest 'avalivele' => sub {
+subtest 'available' => sub {
     my $cache = Cache::Memory::Simple->new(use_time_hires=>1);
     $cache->set('foo', 'bar', 0.5);
     Time::HiRes::sleep 0.2;
