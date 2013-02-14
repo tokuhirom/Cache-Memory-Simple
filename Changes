@@ -1,5 +1,9 @@
 Revision history for Perl extension Cache::Memory::Simple
 
+1.01 2013-02-14T12:55:28
+
+    - Added Cache::Memory::Simple::Scalar
+
 1.00 2013-02-14T11:51:50
 
     - Just bump up version to indicate it's stable.
