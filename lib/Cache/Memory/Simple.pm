@@ -117,6 +117,11 @@ Get a stuff from cache storage by C<< $key >>
 
 Set a stuff for cache.
 
+=item $obj->get_or_set($key, $code, $expiration)
+
+Get a cache value for I<$key> if it's already cached. If it's not cached then, run I<$code> and cache I<$expiration> seconds
+and return the value.
+
 =item $obj->delete($key)
 
 Delete key from cache.
