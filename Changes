@@ -1,5 +1,7 @@
 Revision history for Perl extension Cache::Memory::Simple
 
+{{$NEXT}}
+
 1.01 2013-02-14T12:55:28
 
     - Added Cache::Memory::Simple::Scalar
