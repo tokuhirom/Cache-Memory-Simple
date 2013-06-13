@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Time::HiRes;
 use 5.008001;
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 sub new {
     my ($class) = @_;
@@ -50,6 +50,7 @@ sub delete :method {
     my ($self, $key) = @_;
     delete $self->{$key};
 }
+sub remove { shift->delete(@_) } # alias
 
 sub delete_all {
     my $self = shift;
@@ -105,34 +106,38 @@ Cache::Memory::Simple is yet another on memory cache implementation.
 
 =over 4
 
-=item my $obj = Cache::Memory::Simple->new()
+=item C<< my $obj = Cache::Memory::Simple->new() >>
 
 Create a new instance.
 
-=item my $stuff = $obj->get($key);
+=item C<< my $stuff = $obj->get($key); >>
 
 Get a stuff from cache storage by C<< $key >>
 
-=item $obj->set($key, $val, $expiration)
+=item C<< $obj->set($key, $val, $expiration) >>
 
 Set a stuff for cache.
 
-=item $obj->get_or_set($key, $code, $expiration)
+=item C<< $obj->get_or_set($key, $code, $expiration) >>
 
 Get a cache value for I<$key> if it's already cached. If it's not cached then, run I<$code> and cache I<$expiration> seconds
 and return the value.
 
-=item $obj->delete($key)
+=item C<< $obj->delete($key) >>
 
 Delete key from cache.
 
-=item $obj->purge()
+=item C<< $obj->remove($key) >>
+
+Alias for 'delete' method(Net::DNS::Lite require this method name).
+
+=item C<< $obj->purge() >>
 
 Purge expired data.
 
 This module does not purge expired data automatically. You need to call this method if you need.
 
-=item $obj->delete_all()
+=item C<< $obj->delete_all() >>
 
 Remove all data from cache.
 

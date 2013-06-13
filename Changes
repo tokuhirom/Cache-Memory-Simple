@@ -2,6 +2,11 @@ Revision history for Perl extension Cache::Memory::Simple
 
 {{$NEXT}}
 
+1.02 2013-06-13T01:27:08Z
+
+    - Added C::M::S#remove(Alias of #delete)
+      (Suggested by kazeburo++)
+
 1.01 2013-02-14T12:55:28
 
     - Added Cache::Memory::Simple::Scalar

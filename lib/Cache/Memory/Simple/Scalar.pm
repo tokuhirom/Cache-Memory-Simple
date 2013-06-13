@@ -90,26 +90,26 @@ Cache::Memory::Simple is cache storage for one scalar value with expiration.
 
 =over 4
 
-=item my $obj = Cache::Memory::Simple->new()
+=item C<< my $obj = Cache::Memory::Simple->new() >>
 
 Create a new instance.
 
-=item my $stuff = $obj->get();
+=item C<< my $stuff = $obj->get(); >>
 
 Get a stuff from cache storage.
 
-=item $obj->set($val, $expiration)
+=item C<< $obj->set($val, $expiration) >>
 
 Set a stuff to cache.
 
 I<$expiration> is in seconds.
 
-=item $obj->get_or_set($code, $expiration)
+=item C<< $obj->get_or_set($code, $expiration) >>
 
 Get a cache value if it's already cached. If it's not cached then, run I<$code> and cache I<$expiration> seconds
 and return the value.
 
-=item $obj->delete()
+=item C<< $obj->delete() >>
 
 Delete cache from cache.
 

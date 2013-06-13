@@ -24,34 +24,38 @@ Cache::Memory::Simple is yet another on memory cache implementation.
 
 # METHODS
 
-- my $obj = Cache::Memory::Simple->new()
+- `my $obj = Cache::Memory::Simple->new()`
 
     Create a new instance.
 
-- my $stuff = $obj->get($key);
+- `my $stuff = $obj->get($key);`
 
     Get a stuff from cache storage by `$key`
 
-- $obj->set($key, $val, $expiration)
+- `$obj->set($key, $val, $expiration)`
 
     Set a stuff for cache.
 
-- $obj->get\_or\_set($key, $code, $expiration)
+- `$obj->get_or_set($key, $code, $expiration)`
 
     Get a cache value for _$key_ if it's already cached. If it's not cached then, run _$code_ and cache _$expiration_ seconds
     and return the value.
 
-- $obj->delete($key)
+- `$obj->delete($key)`
 
     Delete key from cache.
 
-- $obj->purge()
+- `$obj->remove($key)`
+
+    Alias for 'delete' method(Net::DNS::Lite require this method name).
+
+- `$obj->purge()`
 
     Purge expired data.
 
     This module does not purge expired data automatically. You need to call this method if you need.
 
-- $obj->delete\_all()
+- `$obj->delete_all()`
 
     Remove all data from cache.
 
