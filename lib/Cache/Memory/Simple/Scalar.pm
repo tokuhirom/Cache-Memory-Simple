@@ -84,13 +84,13 @@ Cache::Memory::Simple::Scalar - Cache one scalar value
 
 =head1 DESCRIPTION
 
-Cache::Memory::Simple is cache storage for one scalar value with expiration.
+Cache::Memory::Simple::Scalar is cache storage for one scalar value with expiration.
 
 =head1 METHODS
 
 =over 4
 
-=item C<< my $obj = Cache::Memory::Simple->new() >>
+=item C<< my $obj = Cache::Memory::Simple::Scalar->new() >>
 
 Create a new instance.
 
