@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Time::HiRes;
 use 5.008001;
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 sub new {
     my ($class) = @_;
